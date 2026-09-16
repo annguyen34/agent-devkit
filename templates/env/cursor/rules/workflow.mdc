@@ -1,0 +1,30 @@
+---
+description: Structured AI-assisted development workflow rules
+globs: ["**/*"]
+alwaysApply: true
+---
+
+# Development Workflow
+
+Always check `{{docsDir}}/` before implementing features.
+
+## Phase Documentation
+
+Phase docs live in `{{docsDir}}/`:
+- `requirements/` — What to build and why
+- `design/` — How to build it
+- `planning/` — Task breakdown
+- `testing/` — Test strategy and coverage
+
+## Code Quality Rules
+
+- Write self-documenting code; avoid redundant comments
+- Only add error handling for real, possible failures
+- No speculative features beyond stated requirements
+- Three similar lines is better than a premature abstraction
+
+## Before Starting Any Task
+
+1. Read the relevant `{{docsDir}}/` docs
+2. Confirm your understanding with the user if unclear
+3. Implement, then update docs with any decisions made

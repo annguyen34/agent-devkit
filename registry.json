@@ -1,0 +1,234 @@
+{
+  "skills": [
+    {
+      "name": "anthropics/skills",
+      "url": "https://github.com/anthropics/skills.git",
+      "description": "Official Anthropic skill collection including Claude API helpers"
+    },
+    {
+      "name": "vercel-labs/agent-skills",
+      "url": "https://github.com/vercel-labs/agent-skills.git",
+      "description": "Agent skill collection from Vercel Labs"
+    },
+    {
+      "name": "remotion-dev/skills",
+      "url": "https://github.com/remotion-dev/skills.git",
+      "description": "Skills for Remotion video creation and rendering workflows"
+    },
+    {
+      "name": "supabase/agent-skills",
+      "url": "https://github.com/supabase/agent-skills.git",
+      "description": "Agent skills for Supabase database and backend development"
+    },
+    {
+      "name": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers.git",
+      "description": "Superpowers skill collection"
+    },
+    {
+      "name": "softaworks/agent-toolkit",
+      "url": "https://github.com/softaworks/agent-toolkit.git",
+      "description": "Agent toolkit and skills from Softaworks"
+    },
+    {
+      "name": "codeaholicguy/ai-devkit",
+      "url": "https://github.com/codeaholicguy/ai-devkit.git",
+      "description": "AI development kit and skill collection"
+    },
+    {
+      "name": "antfu/skills",
+      "url": "https://github.com/antfu/skills.git",
+      "description": "Skill collection by Anthony Fu, Vue.js and Vite core team member"
+    },
+    {
+      "name": "browser-use/browser-use",
+      "url": "https://github.com/browser-use/browser-use.git",
+      "description": "AI-powered browser automation skills"
+    },
+    {
+      "name": "microsoft/agent-skills",
+      "url": "https://github.com/microsoft/agent-skills.git",
+      "description": "Agent skills from Microsoft"
+    },
+    {
+      "name": "vercel-labs/skills",
+      "url": "https://github.com/vercel-labs/skills.git",
+      "description": "General skill collection from Vercel Labs"
+    },
+    {
+      "name": "vercel-labs/agent-browser",
+      "url": "https://github.com/vercel-labs/agent-browser.git",
+      "description": "Browser automation agent skills from Vercel Labs"
+    },
+    {
+      "name": "coreyhaines31/marketingskills",
+      "url": "https://github.com/coreyhaines31/marketingskills.git",
+      "description": "Marketing and growth-focused agent skills"
+    },
+    {
+      "name": "callstackincubator/agent-skills",
+      "url": "https://github.com/callstackincubator/agent-skills.git",
+      "description": "Agent skills from Callstack, React Native experts"
+    },
+    {
+      "name": "hyf0/vue-skills",
+      "url": "https://github.com/hyf0/vue-skills.git",
+      "description": "Vue.js development skills"
+    },
+    {
+      "name": "napoleond/clawdirect",
+      "url": "https://github.com/napoleond/clawdirect.git",
+      "description": "ClawDirect skill collection"
+    },
+    {
+      "name": "vercel/ai",
+      "url": "https://github.com/vercel/ai.git",
+      "description": "AI SDK skills from Vercel"
+    },
+    {
+      "name": "subsy/ralph-tui",
+      "url": "https://github.com/subsy/ralph-tui.git",
+      "description": "Terminal UI development skills"
+    },
+    {
+      "name": "atxp-dev/cli",
+      "url": "https://github.com/atxp-dev/cli.git",
+      "description": "CLI development skills"
+    },
+    {
+      "name": "giuseppe-trisciuoglio/developer-kit",
+      "url": "https://github.com/giuseppe-trisciuoglio/developer-kit.git",
+      "description": "Developer toolkit and skills"
+    },
+    {
+      "name": "vercel/turborepo",
+      "url": "https://github.com/vercel/turborepo.git",
+      "description": "Turborepo monorepo management skills"
+    },
+    {
+      "name": "jimliu/baoyu-skills",
+      "url": "https://github.com/jimliu/baoyu-skills.git",
+      "description": "Baoyu's curated skill collection"
+    },
+    {
+      "name": "google-labs-code/stitch-skills",
+      "url": "https://github.com/google-labs-code/stitch-skills.git",
+      "description": "Skills for Google Stitch"
+    },
+    {
+      "name": "jezweb/claude-skills",
+      "url": "https://github.com/jezweb/claude-skills.git",
+      "description": "Claude Code skill collection by Jezweb"
+    },
+    {
+      "name": "firecrawl/cli",
+      "url": "https://github.com/firecrawl/cli.git",
+      "description": "Web scraping and crawling skills using Firecrawl"
+    },
+    {
+      "name": "vercel-labs/next-skills",
+      "url": "https://github.com/vercel-labs/next-skills.git",
+      "description": "Next.js development skills from Vercel Labs"
+    },
+    {
+      "name": "inference-sh/skills",
+      "url": "https://github.com/inference-sh/skills.git",
+      "description": "AI inference and model deployment skills"
+    },
+    {
+      "name": "intellectronica/agent-skills",
+      "url": "https://github.com/intellectronica/agent-skills.git",
+      "description": "Agent skill collection"
+    },
+    {
+      "name": "resend/react-email",
+      "url": "https://github.com/resend/react-email.git",
+      "description": "Email template development skills using React Email"
+    },
+    {
+      "name": "onmax/nuxt-skills",
+      "url": "https://github.com/onmax/nuxt-skills.git",
+      "description": "Nuxt.js development skills"
+    },
+    {
+      "name": "forrestchang/andrej-karpathy-skills",
+      "url": "https://github.com/forrestchang/andrej-karpathy-skills.git",
+      "description": "Skills curated from Andrej Karpathy's AI workflows"
+    },
+    {
+      "name": "vuejs-ai/skills",
+      "url": "https://github.com/vuejs-ai/skills.git",
+      "description": "Vue.js AI integration skills"
+    },
+    {
+      "name": "cloudai-x/threejs-skills",
+      "url": "https://github.com/cloudai-x/threejs-skills.git",
+      "description": "Three.js 3D graphics development skills"
+    },
+    {
+      "name": "boristane/agent-skills",
+      "url": "https://github.com/boristane/agent-skills.git",
+      "description": "Agent skills collection"
+    },
+    {
+      "name": "kepano/obsidian-skills",
+      "url": "https://github.com/kepano/obsidian-skills.git",
+      "description": "Obsidian note-taking and knowledge management skills"
+    },
+    {
+      "name": "sickn33/antigravity-awesome-skills",
+      "url": "https://github.com/sickn33/antigravity-awesome-skills.git",
+      "description": "Curated awesome skills collection"
+    },
+    {
+      "name": "zackkorman/skills",
+      "url": "https://github.com/zackkorman/skills.git",
+      "description": "Skills collection by Zack Korman"
+    },
+    {
+      "name": "jeffallan/claude-skills",
+      "url": "https://github.com/jeffallan/claude-skills.git",
+      "description": "Claude Code skills by Jeff Allan"
+    },
+    {
+      "name": "ibelick/ui-skills",
+      "url": "https://github.com/ibelick/ui-skills.git",
+      "description": "UI/UX development and component skills"
+    },
+    {
+      "name": "brianlovin/claude-config",
+      "url": "https://github.com/brianlovin/claude-config.git",
+      "description": "Claude Code configuration and productivity skills by Brian Lovin"
+    },
+    {
+      "name": "waynesutton/convexskills",
+      "url": "https://github.com/waynesutton/convexskills.git",
+      "description": "Convex backend development skills"
+    },
+    {
+      "name": "stripe/ai",
+      "url": "https://github.com/stripe/ai.git",
+      "description": "Payment and API integration skills from Stripe"
+    },
+    {
+      "name": "cloudflare/skills",
+      "url": "https://github.com/cloudflare/skills.git",
+      "description": "Cloudflare Workers and edge computing skills"
+    },
+    {
+      "name": "resciencelab/opc-skills",
+      "url": "https://github.com/resciencelab/opc-skills.git",
+      "description": "OPC and industrial automation skills"
+    },
+    {
+      "name": "adithya-s-k/manim_skill",
+      "url": "https://github.com/adithya-s-k/manim_skill.git",
+      "description": "Mathematical animation skills using Manim"
+    },
+    {
+      "name": "test-automation",
+      "url": "https://github.com/fugazi/test-automation-skills-agents.git",
+      "description": "Test automation skills and workflows"
+    }
+  ]
+}

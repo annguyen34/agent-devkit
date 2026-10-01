@@ -45,12 +45,30 @@ export class SkillManager {
 
   /** Install a skill from the local skills/ directory (bundled with the CLI) */
   async installLocal(skillName: string, options: InstallOptions = {}): Promise<void> {
-    const repoPath = path.join(__dirname, '../../skills');
+    // Find the package root (where skills/ lives)
+    // In dev: src/lib/ -> package root = ../../
+    // In built: dist/lib/ -> package root = ../../
+    // When installed: node_modules/agent-devkit/dist/lib/ -> package root = ../../
+    const packageRoot = path.resolve(__dirname, '../../');
+    const skillsDir = path.join(packageRoot, 'skills');
     
-    const skills = await this.discoverSkills(repoPath);
-    const skill = skills.find((s) => s.name === skillName);
-    if (!skill) {
+    if (!await fs.pathExists(skillsDir)) {
+      throw new Error(`Bundled skills directory not found at ${skillsDir}`);
+    }
+    
+    // Verify the skill exists in skills/
+    const skillPath = path.join(skillsDir, skillName, 'SKILL.md');
+    if (!await fs.pathExists(skillPath)) {
       throw new Error(`Local skill "${skillName}" not found in skills/ directory.`);
+    }
+
+    // Read description
+    let description: string | undefined;
+    try {
+      const content = await fs.readFile(skillPath, 'utf8');
+      description = extractDescription(content);
+    } catch {
+      // ignore
     }
 
     const environments = await this.resolveEnvironments(options.environments);
@@ -58,7 +76,8 @@ export class SkillManager {
       throw new Error('No skill-capable environments configured (claude, cursor, github, opencode).');
     }
 
-    await this.installSkill(repoPath, skillName, 'local://bundled', environments);
+    // installSkill expects repoPath to be the parent of skills/, so pass packageRoot
+    await this.installSkill(packageRoot, skillName, 'local://bundled', environments);
   }
 
   async list(): Promise<InstalledSkill[]> {

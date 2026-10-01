@@ -1,4 +1,4 @@
-export type EnvironmentCode = "claude" | "cursor" | "github";
+export type EnvironmentCode = "claude" | "cursor" | "github" | "opencode";
 
 export type Phase =
   | "requirements"

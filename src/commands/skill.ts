@@ -18,7 +18,7 @@ export function makeSkillCommand(): Command {
   cmd
     .command('install [git-url-or-name]')
     .description('Install a skill by name (registry lookup) or git URL')
-    .option('-e, --env <envs>', 'Comma-separated environments to install into (e.g. claude,cursor)')
+    .option('-e, --env <envs>', 'Comma-separated environments to install into (e.g. claude,cursor,opencode)')
     .action(async (arg: string | undefined, options) => {
       const cwd = process.cwd();
       const configManager = new ConfigManager(cwd);

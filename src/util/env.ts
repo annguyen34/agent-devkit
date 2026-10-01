@@ -25,6 +25,14 @@ export const ENVIRONMENT_DEFINITIONS: EnvironmentDefinition[] = [
     commandExt: '.prompt.md',
     cmdRef: '#',
   },
+  {
+    code: 'opencode',
+    displayName: 'OpenCode',
+    rootFiles: ['AGENTS.md'],
+    commandsDir: '.opencode/skill',
+    commandExt: '.md',
+    cmdRef: '',
+  },
 ];
 
 export function getEnvironmentDef(code: string): EnvironmentDefinition | undefined {

@@ -59,7 +59,7 @@ export function makeInitCommand(): Command {
   cmd
     .option(
       "-e, --environments <envs>",
-      "Comma-separated list of environments (claude,cursor,github)",
+      "Comma-separated list of environments (claude,cursor,github,opencode)",
     )
     .option("-p, --phases <phases>", "Comma-separated list of phases")
     .option("-a, --all", "Initialize all available phases")

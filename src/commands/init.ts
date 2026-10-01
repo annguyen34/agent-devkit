@@ -245,10 +245,9 @@ export function makeInitCommand(): Command {
         // Install agent-orchestration skill if requested
         if (installOrchestrationSkill) {
           const skillManager = new SkillManager(configManager);
-          const orchestrationSkillUrl = "https://github.com/annguyen34/agent-orchestration-skill.git";
           try {
             spinner.text = "Installing agent-orchestration skill...";
-            await skillManager.install(orchestrationSkillUrl, "agent-orchestration", {
+            await skillManager.installLocal("agent-orchestration", {
               environments: selectedEnvs,
             });
           } catch (err: any) {

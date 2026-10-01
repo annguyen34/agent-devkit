@@ -35,12 +35,30 @@ export class SkillManager {
 
     const environments = await this.resolveEnvironments(options.environments);
     if (environments.length === 0) {
-      throw new Error('No skill-capable environments configured (claude, cursor, github).');
+      throw new Error('No skill-capable environments configured (claude, cursor, github, opencode).');
     }
 
     for (const name of skillNames) {
       await this.installSkill(repoPath, name, gitUrl, environments);
     }
+  }
+
+  /** Install a skill from the local skills/ directory (bundled with the CLI) */
+  async installLocal(skillName: string, options: InstallOptions = {}): Promise<void> {
+    const repoPath = path.join(__dirname, '../../skills');
+    
+    const skills = await this.discoverSkills(repoPath);
+    const skill = skills.find((s) => s.name === skillName);
+    if (!skill) {
+      throw new Error(`Local skill "${skillName}" not found in skills/ directory.`);
+    }
+
+    const environments = await this.resolveEnvironments(options.environments);
+    if (environments.length === 0) {
+      throw new Error('No skill-capable environments configured (claude, cursor, github, opencode).');
+    }
+
+    await this.installSkill(repoPath, skillName, 'local://bundled', environments);
   }
 
   async list(): Promise<InstalledSkill[]> {

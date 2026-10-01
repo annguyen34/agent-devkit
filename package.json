@@ -19,7 +19,8 @@
   "files": [
     "dist",
     "templates",
-    "registry.json"
+    "registry.json",
+    "skills"
   ],
   "dependencies": {
     "chalk": "^5.3.0",

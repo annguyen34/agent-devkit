@@ -79,6 +79,8 @@ describe('init: root context files are user-owned', () => {
   beforeEach(() => {
     tmp = makeTmpDir();
     promptMock.mockReset();
+    // Mock the new skill installation prompt (default to false)
+    promptMock.mockResolvedValueOnce({ installSkill: false });
   });
 
   afterEach(() => {
@@ -118,8 +120,10 @@ describe('init: root context files are user-owned', () => {
     // First run creates .agent-devkit.json so the second run hits the reinit path.
     await runInit(tmp, ['-e', 'claude', '-p', 'requirements', '-d', 'docs/ai']);
 
-    // Second run: confirm the reinit prompt.
-    promptMock.mockResolvedValueOnce({ proceed: true });
+    // Second run: confirm the reinit prompt, then decline skill installation.
+    promptMock
+      .mockResolvedValueOnce({ proceed: true })
+      .mockResolvedValueOnce({ installSkill: false });
     await runInit(tmp, ['-e', 'claude', '-p', 'requirements', '-d', 'docs/ai']);
 
     expect(fs.readFileSync(path.join(tmp, 'CLAUDE.md'), 'utf-8')).toBe(
@@ -227,6 +231,8 @@ describe('init: composed command content', () => {
   beforeEach(() => {
     tmp = makeTmpDir();
     promptMock.mockReset();
+    // Mock the new skill installation prompt (default to false)
+    promptMock.mockResolvedValueOnce({ installSkill: false });
   });
 
   afterEach(() => {

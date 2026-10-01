@@ -6,6 +6,7 @@ import path from "path";
 import fs from "fs-extra";
 import { ConfigManager } from "../lib/ConfigManager";
 import { TemplateManager } from "../lib/TemplateManager";
+import { SkillManager } from "../lib/SkillManager";
 import { ENVIRONMENT_DEFINITIONS } from "../util/env";
 import { EnvironmentCode, Phase } from "../types";
 
@@ -64,6 +65,7 @@ export function makeInitCommand(): Command {
     .option("-p, --phases <phases>", "Comma-separated list of phases")
     .option("-a, --all", "Initialize all available phases")
     .option("-d, --docs-dir <dir>", "Documentation directory", "docs/ai")
+    .option("--with-orchestration", "Install agent-orchestration skill (tmux-based multi-agent orchestration)")
     .action(async (options) => {
       const cwd = process.cwd();
       const configManager = new ConfigManager(cwd);
@@ -153,6 +155,20 @@ export function makeInitCommand(): Command {
             },
           ]);
 
+      // Optional: install agent-orchestration skill
+      let installOrchestrationSkill = options.withOrchestration === true;
+      if (!installOrchestrationSkill && !isReinit) {
+        const { installSkill } = await inquirer.prompt([
+          {
+            type: "confirm",
+            name: "installSkill",
+            message: "Install agent-orchestration skill (tmux-based multi-agent orchestration)?",
+            default: false,
+          },
+        ]);
+        installOrchestrationSkill = installSkill;
+      }
+
       const spinner = ora("Setting up agent-devkit...").start();
       const vars = { docsDir };
 
@@ -225,6 +241,21 @@ export function makeInitCommand(): Command {
           phases: selectedPhases,
           docsDir,
         });
+
+        // Install agent-orchestration skill if requested
+        if (installOrchestrationSkill) {
+          const skillManager = new SkillManager(configManager);
+          const orchestrationSkillUrl = "https://github.com/annguyen34/agent-orchestration-skill.git";
+          try {
+            spinner.text = "Installing agent-orchestration skill...";
+            await skillManager.install(orchestrationSkillUrl, "agent-orchestration", {
+              environments: selectedEnvs,
+            });
+          } catch (err: any) {
+            console.log(chalk.yellow(`\nWarning: Failed to install agent-orchestration skill: ${err.message}`));
+            console.log(chalk.gray("You can install it later with: agent-devkit skill install <url> -e " + selectedEnvs.join(",")));
+          }
+        }
 
         // Clean up stale root-file entries written by prior init versions.
         // Root context files are user-owned now and must be tracked by git.
